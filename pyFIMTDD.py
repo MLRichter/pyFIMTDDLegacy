@@ -2,9 +2,6 @@ __author__ = 'matsrichter'
 
 
 import numpy as np
-from LearnComponent.Approximator import TensorExpansion
-from LearnComponent.Learner import RLS
-from LearnComponent.Learner import PA
 
 class FIMTDD:
     """
