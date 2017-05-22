@@ -2,9 +2,6 @@ __author__ = 'matsrichter'
 
 
 import numpy as np
-from LearnComponent.Approximator import TensorExpansion
-from LearnComponent.Learner import RLS
-from LearnComponent.Learner import PA
 
 class FIMTDD:
     """
@@ -152,10 +149,12 @@ class Node:
             #check all n_min samples the q statistics of current and alt-tree
             if self.c_x == 0:
                 this_q = 0.0
-                alt_q = 0.0
+                alt_q = 1.0
             else:
                 this_q = self.sq_loss + (0.995*(self.cum_sq_loss)/self.c_x)
                 alt_q = self.alt_tree.sq_loss + (0.995*((self.alt_tree.cum_sq_loss-self.alt_tree.sq_loss)/(self.alt_tree.c_x-1.0)))
+            if alt_q == 0:
+                alt_q = 0.00000001
             if not this_q == 0.0 and this_q/alt_q > 0:
                 #if alt-tree has better performance, replace this node with alternate subtree
                 if self.isroot:
@@ -197,8 +196,10 @@ class Node:
         :return:
         """
         #print "gorow alt node: "+str(self.index)
-        self.alt_tree = LeafNode(self,self.n_min,None,self.gamma,self.alpha,threshold=self.threshold,learn=self.l)
+        #self.alt_tree = LeafNode(self,self.n_min,None,self.gamma,self.alpha,threshold=self.threshold,learn=self.l)
+        self.alt_tree = LeafNode(self,n_min=self.n_min,model=None,gamma=self.gamma,alpha=self.alpha,threshold=self.threshold,learn=self.l)
         #self.alt_tree.index += 3
+
         self.alt_tree.isAlt = True
         return
 
@@ -261,9 +262,9 @@ class LeafNode(Node):
         """
         #return
         #print "splitting node at index: "+str(index)
-        node = Node(self.parent,key_dim=index,key=splits['bestsplit'],gamma=self.gamma,learn = self.l)
-        left = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l)
-        right = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l)
+        node = Node(self.parent,n_min=self.n_min,key_dim=index,key=splits['bestsplit'],gamma=self.gamma,learn = self.l,threshold=self.threshold,alpha=self.alpha)
+        left = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l,threshold=self.threshold)
+        right = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l,threshold=self.threshold)
         l1 = LinearRegressor(left,self.model.filter.w,learn = self.l)
         l2 = LinearRegressor(right,self.model.filter.w,learn = self.l)
         left.model = l1
