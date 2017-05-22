@@ -264,8 +264,8 @@ class LeafNode(Node):
         node = Node(self.parent,key_dim=index,key=splits['bestsplit'],gamma=self.gamma,learn = self.l)
         left = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l)
         right = LeafNode(parent=node,n_min=self.n_min,gamma=self.gamma,alpha=self.alpha,learn = self.l)
-        l1 = LinearRegressor(left,self.model.w,learn = self.l)
-        l2 = LinearRegressor(right,self.model.w,learn = self.l)
+        l1 = LinearRegressor(left,self.model.filter.w,learn = self.l)
+        l2 = LinearRegressor(right,self.model.filter.w,learn = self.l)
         left.model = l1
         right.model = l2
         #left.index += 1
@@ -496,11 +496,15 @@ class LinearRegressor:
         if w is None:
             self.w = w
         else:
-            self.w = np.zeros(len(w))
+            self.w = np.random.rand(len(w))
+            self.w = self.w / np.linalg.norm(self.w)
+            k = list()
             for i in range(len(self.w)):
                 self.w[i] = w[i]
+                k.append(w[i])
             self.S = self.covM * np.identity(len(self.w))
             self.filter = pa.filters.FilterRLS(len(self.w))
+            self.filter.w = k
         self.x_count = None
         self.x_sq_count = None
         self.c = 0.0
@@ -508,6 +512,7 @@ class LinearRegressor:
         self.forgF = 1.0
 
     def eval(self,x):
+
         if self.x_count is None:
             self.x_count = np.zeros(len(x))
             self.x_sq_count = np.zeros(len(x))
@@ -518,8 +523,8 @@ class LinearRegressor:
             self.w = self.w/np.linalg.norm(self.w)
             self.S = self.covM * np.identity(len(self.w))
             self.filter = pa.filters.FilterRLS(len(self.w))
-        yp = np.inner(x,self.w)
-        #yp = self.filter.predict(x)
+        #yp = np.inner(x,self.w)
+        yp = self.filter.predict(x)
         return yp
 
     def eval_and_learn(self,x,y):
@@ -530,8 +535,8 @@ class LinearRegressor:
         #x = self.normalize(x,y)
         x = np.hstack((1.0,x))
         self.learn(x,y,yp)
-        #return self.filter.predict(x)
-        return yp
+        return self.filter.predict(x)
+        #return yp
 
     def rls_learn(self, x, phiX, y, yp):
         deltaAlpha = np.dot(self.S, phiX) / ((self.forgF + np.inner(phiX, np.dot(self.S, phiX))) * (y - yp))
@@ -609,4 +614,3 @@ class Node_EBST:
             else:
                 self.right.add(val,y)
         return
-
