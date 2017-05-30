@@ -218,7 +218,7 @@ class Node:
 
         self.PH += error - (self.cumloss/self.c_x) - self.alpha
 
-        if self.PH < self.minPH or self.minPH is None:
+        if self.minPH is None or self.PH < self.minPH :
             self.minPH = self.PH
         return self.PH - self.minPH > self.threshold
         #return False
