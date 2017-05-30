@@ -12,8 +12,8 @@ import progressbar as pb
 
 counter = 0
 def abalone_test(paramlist,show,val):
-    print(val)
-    print(paramlist)
+    #print(val)
+    #print(paramlist)
     fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
     fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
     cumLossgd=[0]
@@ -38,15 +38,20 @@ def abalone_test(paramlist,show,val):
 
 
         if show:
+            f=plt.figure()
             plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+            f.hold(True)
             plt.plot(cumLossls[1:], label="Filter Loss")
+           #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+            #plt.plot(avglossgd,label="Average GD Loss")
+            #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
             plt.title("CumLoss Ratio:"+str(min(cumLossgd[-1],cumLossls[-1])/max(cumLossgd[-1],cumLossls[-1])))
             plt.legend()
             figname="g"+str(paramlist[0])+"_nmin"+str(paramlist[1])+"_al"+str(paramlist[2])+"_thr"+str(paramlist[3])\
                     + "_lr"+str(paramlist[4])+".png"
             plt.savefig(figname)
-            plt.hold(False)
-            plt.clf()
+            #plt.show()
+            f.clear()
         return [cumLossgd,cumLossls,val,paramlist]
 
 def callback_func(list):
@@ -113,16 +118,23 @@ if __name__ == '__main__':
     global result_list
     global bar
     #pool = #()
-    gammalist=np.arange(0.01,0.2,0.04)
-    n_minlist=np.arange(10,200,20)
-    alphalist=np.arange(0.05,0.5,0.1)
-    thresholdlist= np.arange(5,50,4)
-    learnlist=np.arange(0.001,0.5,0.1)
+    if(True): #For plot testing purposes, set this to false
+        gammalist=np.arange(0.01,0.1,0.05)
+        n_minlist=np.arange(10,200,70)
+        alphalist=np.arange(0.05,0.5,0.1)
+        thresholdlist= np.arange(5,50,20)
+        learnlist=np.arange(0.1,0.5,0.1)
+    else:
+        gammalist = [0.01,0.02]
+        n_minlist = [100]
+        alphalist = [0.05]
+        thresholdlist = [50]
+        learnlist = [0.01]
     minparamgd=[]
     minvalgd=np.inf
     minparamls=[]
     minvalls=np.inf
-    pool = Pool(processes=8)
+    pool = Pool(processes=6)
     counter=0
     numberoftests=len(gammalist)*len(n_minlist)*len(alphalist)*len(thresholdlist)*len(learnlist)
     result_list = [None]*numberoftests
