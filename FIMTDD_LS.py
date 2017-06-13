@@ -48,6 +48,26 @@ class FIMTDD:
         #print str(self.c)+" ( yp: "+str(yp)+", y: "+str(y)+")"+" loss: "+str(np.fabs(yp-y))
         return yp
 
+    def count_nodes(self):
+        node = self.root
+        def c_l(node):
+            if type(node) == LeafNode:
+                return 1
+            else:
+                return 1 + c_l(node.left) + c_l(node.right)
+        sol = c_l(node)
+        return sol
+
+    def count_leaves(self):
+        node = self.root
+        def c_l(node):
+            if type(node) == LeafNode:
+                return 1
+            else:
+                return c_l(node.left) + c_l(node.right)
+        sol =  c_l(node)
+        return sol
+
 class Node:
 
     i_c = 0
@@ -95,6 +115,7 @@ class Node:
         self.isroot = False
         self.update_root()
         self.l = learn
+        self.S_i = 0
 
     def update_root(self):
         if isinstance(self.parent,FIMTDD):
@@ -145,18 +166,20 @@ class Node:
             self.alt_tree.eval_and_learn(x,y)
         #update squared error
         self.sq_loss = (y - yp)**2
+        self.S_i = (self.S_i*0.995) + self.sq_loss
         if self.alt_tree != None and self.alt_counter%self.n_min == 0 and self.alt_counter != 0:
             #check all n_min samples the q statistics of current and alt-tree
             if self.c_x == 0:
                 this_q = 0.0
                 alt_q = 1.0
             else:
-                this_q = self.sq_loss + (0.995*(self.cum_sq_loss)/self.c_x)
-                alt_q = self.alt_tree.sq_loss + (0.995*((self.alt_tree.cum_sq_loss-self.alt_tree.sq_loss)/(self.alt_tree.c_x-1.0)))
+                this_q = self.S_i
+                alt_q = self.alt_tree.S_i
             if alt_q == 0:
                 alt_q = 0.00000001
-            if not this_q == 0.0 and this_q/alt_q > 0:
+            if not this_q == 0.0 and np.log(this_q/alt_q) > 0:
                 #if alt-tree has better performance, replace this node with alternate subtree
+                #print "Replaced alt tree (LS) @",self.index
                 if self.isroot:
                     self.parent.root = self.alt_tree
                 elif self.parent.left.index == self.index:
@@ -316,14 +339,15 @@ class LeafNode(Node):
             self.alt_counter += 1
             self.alt_tree.eval_and_learn(x,y)
         self.sq_loss = (y - yp)**2
+        self.S_i = (self.S_i*0.995) + self.sq_loss
         if self.alt_tree != None and self.alt_counter%self.n_min == 0 and self.alt_counter != 0:
             if self.alt_tree.c_x == 0:
                 this_q = 0.0
                 alt_q = 0.0
             else:
-                this_q = self.sq_loss + (0.995*(self.cum_sq_loss)/self.c_x)
-                alt_q = self.alt_tree.sq_loss + (0.995*((self.alt_tree.cum_sq_loss-self.alt_tree.sq_loss)/(self.alt_tree.c_x-1.0)))
-            if not this_q == 0.0 and this_q/alt_q > 0:
+                this_q = self.S_i
+                alt_q = self.alt_tree.S_i
+            if not this_q == 0.0 and np.log(this_q/alt_q) > 0:
                 self.update_root()
                 if self.isroot:
                     self.parent.root = self.alt_tree
@@ -536,8 +560,7 @@ class LinearRegressor:
         #x = self.normalize(x,y)
         x = np.hstack((1.0,x))
         self.learn(x,y,yp)
-        return self.filter.predict(x)
-        #return yp
+        return yp
 
     def rls_learn(self, x, phiX, y, yp):
         deltaAlpha = np.dot(self.S, phiX) / ((self.forgF + np.inner(phiX, np.dot(self.S, phiX))) * (y - yp))

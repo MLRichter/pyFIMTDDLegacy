@@ -2,14 +2,19 @@ __author__='jautz'
 
 import csv
 import numpy as np
-from pyFIMTDD import FIMTDD as FIMTGD
+
+#from pyFIMTDD import FIMTDD as FIMTGD
+from Greedy_FIMTDD_LS import FIMTDD as FIMTGD
 from FIMTDD_LS import FIMTDD as FIMTLS
 import matplotlib.pyplot as plt
 import itertools
 import time
 from multiprocessing import Pool
+import multiprocessing as mp
 import progressbar as pb
 import os
+import sys
+sys.setrecursionlimit(100000)
 
 counter = 0
 def abalone_test(paramlist,show,val):
@@ -20,7 +25,9 @@ def abalone_test(paramlist,show,val):
     cumLossgd=[0]
     cumLossls=[0]
     with open( "abalone.data", 'rt') as abalonefile:
+        i = 0
         for row in abalonefile:
+            i += 1
             row=row.rstrip().split(',')
             target=float(row[-1])
             if row[0]=="M":
@@ -52,6 +59,9 @@ def abalone_test(paramlist,show,val):
             plt.savefig(figname)
             #plt.show()
             f.clear()
+        #print(i)
+        #print(fimtgd.count_leaves())
+        #print(fimtgd.count_nodes())
         return [cumLossgd,cumLossls,val,paramlist]
 
 
@@ -99,6 +109,7 @@ def flightdata_test(paramlist,show,val):
                             input.append(float(18))
                             input.append(float(row[23]))
                             #print ("Input: " +str(input))
+
                 except(UnicodeDecodeError):
                     continue
 
@@ -121,6 +132,7 @@ def flightdata_test(paramlist,show,val):
         plt.savefig(figname)
         #plt.show()
         f.clear()
+    print(fimtgd.count_leaves(),fimtgd.count_nodes())
     return [cumLossgd,cumLossls,val,paramlist]
 
 
@@ -190,27 +202,30 @@ if __name__ == '__main__':
     global result_list
     global bar
     #pool = #()
-    if(True): #For plot testing purposes, set this to false
+    if(False): #For plot testing purposes, set this to false
         gammalist=np.arange(0.01,0.1,0.05)
-        n_minlist=np.arange(10,200,70)
-        alphalist=np.arange(0.05,0.5,0.1)
-        thresholdlist= np.arange(5,50,20)
-        learnlist=np.arange(0.1,0.5,0.1)
+        n_minlist=[200,400,500,900]#np.arange(1,1000,50)
+        alphalist=np.arange(0.15,0.5,0.1)
+        thresholdlist= np.arange(25,75,25)
+        learnlist=[1,100,300]
     else:
-        gammalist = [0.01,0.02]
-        n_minlist = [100]
-        alphalist = [0.05]
-        thresholdlist = [50]
-        learnlist = [0.01]
+        gammalist = [0.01]
+        n_minlist = [300]
+        alphalist = [0.15]
+        thresholdlist = [15]
+        learnlist = [10]
 
+
+    """
     if(True): #for singular test, set this to true
         for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
             print (flightdata_test(paramlist,True,12))
+    """
     minparamgd=[]
     minvalgd=np.inf
     minparamls=[]
     minvalls=np.inf
-    pool = Pool(processes=6)
+    pool = Pool(processes=mp.cpu_count()-1)
     counter=0
     numberoftests=len(gammalist)*len(n_minlist)*len(alphalist)*len(thresholdlist)*len(learnlist)
     result_list = [None]*numberoftests
@@ -218,12 +233,13 @@ if __name__ == '__main__':
     c = 0
     bar = pb.ProgressBar(max_value=numberoftests)
     for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
-        pool.apply_async(func=flightdata_test,args=(paramlist,False,c),callback=callback_func)
+        pool.apply_async(func=abalone_test,args=(paramlist,False,c),callback=callback_func)
+        #callback_func(abalone_test(paramlist,False,c))
         c = c+1
     pool.close()
     pool.join()
     print('Proceses Finished')
-    print(result_list)
+    #print(result_list)
     minvalgd, minparamgd, minvalls, minparamls = find_max(result_list)
     print("Optimal GD: "+ str(minparamgd)+ " with " + str(minvalgd))
     print("Optimal LS: "+ str(minparamls)+ " with " + str(minvalls))
