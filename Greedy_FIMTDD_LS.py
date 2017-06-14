@@ -49,26 +49,6 @@ class FIMTDD:
         #print str(self.c)+" ( yp: "+str(yp)+", y: "+str(y)+")"+" loss: "+str(np.fabs(yp-y))
         return yp
 
-    def count_nodes(self):
-        node = self.root
-        def c_l(node):
-            if type(node) == LeafNode:
-                return 1
-            else:
-                return 1 + c_l(node.left) + c_l(node.right)
-        sol = c_l(node)
-        return sol
-
-    def count_leaves(self):
-        node = self.root
-        def c_l(node):
-            if type(node) == LeafNode:
-                return 1
-            else:
-                return c_l(node.left) + c_l(node.right)
-        sol =  c_l(node)
-        return sol
-
 class Node:
 
     i_c = 0
@@ -223,10 +203,16 @@ class Node:
         #self.alt_tree = LeafNode(self,self.n_min,None,self.gamma,self.alpha,threshold=self.threshold,learn=self.l)
         #if not self.isLeaf:
             #print "Growing Alt Tree"
-        self.alt_tree = LeafNode(self,n_min=self.n_min,model=None,gamma=self.gamma,alpha=self.alpha,threshold=self.threshold,learn=self.l)
+        if self.isLeaf:
+            self.alt_tree = LeafNode(self, n_min=self.n_min, model=None, gamma=self.gamma, alpha=self.alpha,
+                                     threshold=self.threshold, learn=self.l)
+            LinearRegressor(self.alt_tree, self.model.filter.w, learn=self.l)
+        else:
+            self.alt_tree = LeafNode(self,n_min=self.n_min,model=None,gamma=self.gamma,alpha=self.alpha,threshold=self.threshold,learn=self.l)
         #self.alt_tree.index += 3
         self.S_i = 0
         self.alt_tree.isAlt = True
+
         return
 
     def detect_change(self,y,yp):
@@ -351,7 +337,8 @@ class LeafNode(Node):
             this_q = self.S_i
             alt_q = self.alt_tree.S_i
 
-            if not this_q == 0.0 and not alt_q == 0.0 and np.log(this_q/alt_q) > 0:
+            if not this_q == 0.0 and not alt_q == 0 and np.log(this_q/alt_q) > 0:
+                #print self.alt_counter, this_q,alt_q, np.log(this_q/alt_q)
                 self.update_root()
                 if self.isroot:
                     self.parent.root = self.alt_tree
@@ -363,7 +350,7 @@ class LeafNode(Node):
                 self.alt_tree.isAlt = False
                 self.alt_tree.detection = True
                 self.alt_tree.parent = self.parent
-            if self.alt_counter >= self.n_min*10:
+            if self.alt_counter >= self.l*10:
                 self.alt_tree = None
                 self.alt_counter = 0
         self.cum_sq_loss += self.sq_loss

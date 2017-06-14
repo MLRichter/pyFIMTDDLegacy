@@ -3,9 +3,9 @@ __author__='jautz'
 import csv
 import numpy as np
 
-#from pyFIMTDD import FIMTDD as FIMTGD
-from Greedy_FIMTDD_LS import FIMTDD as FIMTGD
-from FIMTDD_LS import FIMTDD as FIMTLS
+from fFIMTDD import FIMTDD as FIMTGD
+from Greedy_FIMTDD_LS import FIMTDD as gFIMTLS
+from fFIMTDD_LS import FIMTDD as FIMTLS
 import matplotlib.pyplot as plt
 import itertools
 import time
@@ -16,14 +16,65 @@ import os
 import sys
 sys.setrecursionlimit(100000)
 
-counter = 0
+def sine_test(paramlist,show,val):
+    #print(val)
+    #print(paramlist)
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
+    if True:
+        start = 0.0
+        end = 1.0
+        x = list()
+        y = list()
+        for i in range(4000):
+
+            input = np.random.uniform(0.0,1.0)*2*np.pi
+            target = np.sin(input)
+            if i > 2000:
+                target += 1.0
+            noise = (np.random.uniform() - 0.5) * 0.2
+            target += noise
+            x.append(input)
+            y.append(target)
+
+            cumLossgd.append(cumLossgd[-1] + np.fabs(target - fimtgd.eval_and_learn(np.array(input), target)))
+            cumLossls.append(cumLossls[-1] + np.fabs(target - fimtls.eval_and_learn(np.array(input), target)))
+            cumLossgls.append(cumLossgls[-1] + np.fabs(target - gfimtls.eval_and_learn(np.array(input), target)))
+        #plt.scatter(x=x,y=y)
+        #plt.show()
+        if show:
+            f=plt.figure()
+            plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+            f.hold(True)
+            plt.plot(cumLossls[1:], label="Filter Loss")
+           #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+            #plt.plot(avglossgd,label="Average GD Loss")
+            #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+            plt.title("CumLoss Ratio:"+str(min(cumLossgd[-1],cumLossls[-1])/max(cumLossgd[-1],cumLossls[-1])))
+            plt.legend()
+            figname="g"+str(paramlist[0])+"_nmin"+str(paramlist[1])+"_al"+str(paramlist[2])+"_thr"+str(paramlist[3])\
+                    + "_lr"+str(paramlist[4])+".png"
+            plt.savefig(figname)
+            #plt.show()
+            f.clear()
+        #print(i)
+        #print(fimtgd.count_leaves())
+        #print(fimtgd.count_nodes())
+        return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
+#counter = 0
 def abalone_test(paramlist,show,val):
     #print(val)
     #print(paramlist)
     fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
     fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    cumLossgd=[0]
-    cumLossls=[0]
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
     with open( "abalone.data", 'rt') as abalonefile:
         i = 0
         for row in abalonefile:
@@ -42,7 +93,7 @@ def abalone_test(paramlist,show,val):
 
             cumLossgd.append(cumLossgd[-1] + np.fabs(target - fimtgd.eval_and_learn(np.array(input), target)))
             cumLossls.append(cumLossls[-1] + np.fabs(target - fimtls.eval_and_learn(np.array(input), target)))
-
+            cumLossgls.append(cumLossgls[-1] + np.fabs(target - gfimtls.eval_and_learn(np.array(input), target)))
 
         if show:
             f=plt.figure()
@@ -62,7 +113,7 @@ def abalone_test(paramlist,show,val):
         #print(i)
         #print(fimtgd.count_leaves())
         #print(fimtgd.count_nodes())
-        return [cumLossgd,cumLossls,val,paramlist]
+        return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
 
 
 
@@ -146,7 +197,7 @@ def callback_func(list):
     #print("[Thread "+str(list[2])+' ('+str(counter)+'/'+str(numberoftests)+')]: process finished')
     bar.update(counter)
     counter += 1
-    result_list[list[2]] = list
+    result_list[list[3]] = list
 
 def callback_err(argv=None):
     print("Error, process killed")
@@ -163,6 +214,8 @@ def find_max(result_list):
     global minvalls
     global counter
     global numberoftests
+    global minvalgls
+    global minparamgls
     for gdls in result_list:
         if gdls[0][-1]<minvalgd:
             minvalgd=gdls[0][-1]
@@ -170,7 +223,10 @@ def find_max(result_list):
         if gdls[1][-1]<minvalls:
             minvalls=gdls[1][-1]
             minparamls=gdls[-1]
-    return minvalgd,minparamgd,minvalls,minparamls
+        if gdls[2][-1]<minvalgls:
+            minvalgls=gdls[2][-1]
+            minparamgls=gdls[-1]
+    return minvalgd,minparamgd,minvalls,minparamls,minvalgls,minparamgls
 
 global gammalist
 global n_minlist
@@ -185,6 +241,8 @@ global counter
 global numberoftests
 global result_list
 global bar
+global minvalgls
+global minparamgls
 
 if __name__ == '__main__':
 
@@ -201,19 +259,23 @@ if __name__ == '__main__':
     global numberoftests
     global result_list
     global bar
+    global minvalgls
+    global minparamgls
     #pool = #()
-    if(False): #For plot testing purposes, set this to false
-        gammalist=np.arange(0.01,0.1,0.05)
-        n_minlist=[200,400,500,900]#np.arange(1,1000,50)
-        alphalist=np.arange(0.15,0.5,0.1)
-        thresholdlist= np.arange(25,75,25)
-        learnlist=[1,100,300]
+    if(True): #For plot testing purposes, set this to false
+        gammalist=[0.01,0.5,1.0]
+        n_minlist=[50,100,200]#np.arange(1,1000,50)
+        alphalist=np.arange(0.0005,0.5,0.015)
+        thresholdlist= [25,100]
+        learnlist=[0.05,0.07,0.09,0.125]
+        greedlist=[2,5,50,100]
     else:
         gammalist = [0.01]
         n_minlist = [300]
         alphalist = [0.15]
         thresholdlist = [15]
-        learnlist = [10]
+        learnlist = [0.1]
+        greedlist = [10]
 
 
     """
@@ -225,6 +287,8 @@ if __name__ == '__main__':
     minvalgd=np.inf
     minparamls=[]
     minvalls=np.inf
+    minparamgls = []
+    minvalgls = np.inf
     pool = Pool(processes=mp.cpu_count()-1)
     counter=0
     numberoftests=len(gammalist)*len(n_minlist)*len(alphalist)*len(thresholdlist)*len(learnlist)
@@ -233,15 +297,19 @@ if __name__ == '__main__':
     c = 0
     bar = pb.ProgressBar(max_value=numberoftests)
     for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
-        pool.apply_async(func=abalone_test,args=(paramlist,False,c),callback=callback_func)
+        paramlist = list(paramlist)
+        idx = learnlist.index(paramlist[-1])
+        paramlist.append(greedlist[idx])
+        pool.apply_async(func=sine_test,args=(paramlist,False,c),callback=callback_func)
         #callback_func(abalone_test(paramlist,False,c))
         c = c+1
     pool.close()
     pool.join()
     print('Proceses Finished')
     #print(result_list)
-    minvalgd, minparamgd, minvalls, minparamls = find_max(result_list)
+    minvalgd, minparamgd, minvalls, minparamls,minvalgls,minparamgls = find_max(result_list)
     print("Optimal GD: "+ str(minparamgd)+ " with " + str(minvalgd))
     print("Optimal LS: "+ str(minparamls)+ " with " + str(minvalls))
-    abalone_test(minparamgd,True,0)
-    abalone_test(minparamls,True,0)
+    print("Optimal gLS: " + str(minparamgls) + " with " + str(minvalgls))
+    #abalone_test(minparamgd,True,0)
+    #abalone_test(minparamls,True,0)

@@ -164,7 +164,7 @@ class Node:
             if not this_q == 0.0 and np.log(this_q/alt_q) > 0:
                 #if alt-tree has better performance, replace this node with alternate subtree
                 global l
-                #print "Replaced alt tree @",self.index
+                #"Replaced alt tree @",self.index
                 if self.isroot:
                     self.parent.root = self.alt_tree
                 elif self.parent.left.index == self.index:
@@ -205,7 +205,6 @@ class Node:
         """
         global l
         self.alt_tree = LeafNode(self,self.n_min,None,self.gamma,self.alpha,threshold=self.threshold,learn=self.l)
-
         #self.alt_tree.index += 3
         self.alt_tree.isAlt = True
         return
@@ -541,7 +540,7 @@ class LinearRegressor:
         self.x_count += x
         self.x_sq_count += x**2
         self.c += 1.0
-        #x = self.normalize(x,y)
+        x = self.normalize(x,y)
         x = np.hstack((1.0,x))
         self.learn(x,y,yp)
         #return self.filter.predict(x)
@@ -568,10 +567,12 @@ class LinearRegressor:
     def normalize(self,x,y):
         sd = self.leafnode.sd(self.c,self.x_sq_count,self.x_count)
         avg = self.x_count/self.c
-        if sd == 0:
-            return x
-        norm = (x - avg)/(3*sd)
-        return norm
+        for i,xi in enumerate(x):
+            if sd[i] != 0.0:
+                x[i] = (xi - avg[i])/(3*sd[i])
+            else:
+                x[i] = 0.0
+        return x
 
     def denormalize(self,x,y):
         pass

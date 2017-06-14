@@ -396,7 +396,7 @@ class LeafNode(Node):
                 splits.append(self.findBestSplit(tree))
             bi = int(self.findBest(splits))
             bound = 1-self.hoefding_bound(splits[bi]['n'])
-            if splits[bi]['score'] < bound or self.hoefding_bound(splits[bi]['n']) < 0.05 or len(splits) == 1:
+            if splits[bi]['score'] < bound or self.hoefding_bound(splits[bi]['n']) < 0.05:
                 self.split(splits[bi],bi)
         return yp
 
@@ -453,7 +453,7 @@ class LeafNode(Node):
             sdr['max'] = new_sdr
             try:
                 if not new_sdr == 0.0:
-                    sdr['score'] = new_sdr#sdr['2nd'] / new_sdr
+                    sdr['score'] = sdr['2nd'] / new_sdr
                 else:
                     sdr['score'] = 1.0
             except:
