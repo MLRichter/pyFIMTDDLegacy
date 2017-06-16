@@ -3,9 +3,11 @@ __author__='jautz'
 import csv
 import numpy as np
 
-from fFIMTDD import FIMTDD as FIMTGD
+from mpl_toolkits.mplot3d import axes3d
+
+from pyFIMTDD import FIMTDD as FIMTGD
 from Greedy_FIMTDD_LS import FIMTDD as gFIMTLS
-from fFIMTDD_LS import FIMTDD as FIMTLS
+from FIMTDD_LS import FIMTDD as FIMTLS
 import matplotlib.pyplot as plt
 import itertools
 import time
@@ -15,6 +17,69 @@ import progressbar as pb
 import os
 import sys
 sys.setrecursionlimit(100000)
+
+def test2d(paramlist,show,val):
+    #print(val)
+    #print(paramlist)
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
+    if True:
+        start = 0.0
+        end = 1.0
+        X = list()
+        Y = list()
+        x, y, z = axes3d.get_test_data(0.1)
+        num_d = len(x)**2
+        for i in range(len(x)):
+            for j in range(len(y)):
+                input = [x[i,j],y[i,j]]
+                target = z[i,j]
+
+                noise = (np.random.uniform() - 0.5) * 0.2
+                target += noise
+                X.append(input)
+                Y.append(target)
+        data = [X,Y]
+        data = np.array(data)
+        data = data.transpose()
+        np.random.shuffle(data)
+        data = data.transpose()
+
+        for i in range(num_d):
+
+            input = data[0][i]
+            target = data[1][i]
+            #if num_d/2 < i:
+            #    target += 1.0
+
+            cumLossgd.append(cumLossgd[-1] + np.fabs(target - fimtgd.eval_and_learn(np.array(input), target)))
+            cumLossls.append(cumLossls[-1] + np.fabs(target - fimtls.eval_and_learn(np.array(input), target)))
+            cumLossgls.append(cumLossgls[-1] + np.fabs(target - gfimtls.eval_and_learn(np.array(input), target)))
+            #plt.scatter(x=x,y=y)
+            #plt.show()
+            if show:
+                f=plt.figure()
+                plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+                f.hold(True)
+                plt.plot(cumLossls[1:], label="Filter Loss")
+               #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+                #plt.plot(avglossgd,label="Average GD Loss")
+                #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+                plt.title("CumLoss Ratio:"+str(min(cumLossgd[-1],cumLossls[-1])/max(cumLossgd[-1],cumLossls[-1])))
+                plt.legend()
+                figname="g"+str(paramlist[0])+"_nmin"+str(paramlist[1])+"_al"+str(paramlist[2])+"_thr"+str(paramlist[3])\
+                        + "_lr"+str(paramlist[4])+".png"
+                plt.savefig(figname)
+                #plt.show()
+                f.clear()
+            #print(i)
+            #print(fimtgd.count_leaves())
+            #print(fimtgd.count_nodes())
+        return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
 
 def sine_test(paramlist,show,val):
     #print(val)
@@ -36,7 +101,7 @@ def sine_test(paramlist,show,val):
             target = np.sin(input)
             if i > 2000:
                 target += 1.0
-            noise = (np.random.uniform() - 0.5) * 0.2
+            noise = (np.random.uniform() - 0.5) * 0.8
             target += noise
             x.append(input)
             y.append(target)
@@ -263,19 +328,19 @@ if __name__ == '__main__':
     global minparamgls
     #pool = #()
     if(True): #For plot testing purposes, set this to false
-        gammalist=[0.01,0.5,1.0]
-        n_minlist=[50,100,200]#np.arange(1,1000,50)
-        alphalist=np.arange(0.0005,0.5,0.015)
-        thresholdlist= [25,100]
-        learnlist=[0.05,0.07,0.09,0.125]
+        gammalist=[0.25,0.5,0.75,1.0]
+        n_minlist=[5,10,15,100]#np.arange(1,1000,50)
+        alphalist=[0.001]
+        thresholdlist= [10,25,100,150]
+        learnlist=[0.005,0.01,0.025,0.05]
         greedlist=[2,5,50,100]
     else:
-        gammalist = [0.01]
-        n_minlist = [300]
-        alphalist = [0.15]
-        thresholdlist = [15]
-        learnlist = [0.1]
-        greedlist = [10]
+        gammalist = [1.0]
+        n_minlist = [35]
+        alphalist = [0.2854]
+        thresholdlist = [100]
+        learnlist = [0.05]
+        greedlist = [2]
 
 
     """
@@ -300,8 +365,8 @@ if __name__ == '__main__':
         paramlist = list(paramlist)
         idx = learnlist.index(paramlist[-1])
         paramlist.append(greedlist[idx])
-        pool.apply_async(func=sine_test,args=(paramlist,False,c),callback=callback_func)
-        #callback_func(abalone_test(paramlist,False,c))
+        pool.apply_async(func=test2d,args=(paramlist,False,c),callback=callback_func)
+        #callback_func(test2d(paramlist,False,c))
         c = c+1
     pool.close()
     pool.join()
