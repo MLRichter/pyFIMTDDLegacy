@@ -39,8 +39,6 @@ def test2d(paramlist,show,val):
                 input = [x[i,j],y[i,j]]
                 target = z[i,j]
 
-                noise = (np.random.uniform() - 0.5) * 0.2
-                target += noise
                 X.append(input)
                 Y.append(target)
         data = [X,Y]
@@ -52,13 +50,16 @@ def test2d(paramlist,show,val):
         for i in range(num_d):
 
             input = data[0][i]
-            target = data[1][i]
-            #if num_d/2 < i:
-            #    target += 1.0
+            target = data[1][i] + (np.random.uniform() - 0.5) * 0.2
+            o_target = data[1][i]
 
-            cumLossgd.append(cumLossgd[-1] + np.fabs(target - fimtgd.eval_and_learn(np.array(input), target)))
-            cumLossls.append(cumLossls[-1] + np.fabs(target - fimtls.eval_and_learn(np.array(input), target)))
-            cumLossgls.append(cumLossgls[-1] + np.fabs(target - gfimtls.eval_and_learn(np.array(input), target)))
+            if num_d/2 < i:
+                target += 1.0
+                o_target += 1.0
+
+            cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
+            cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
+            cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
             #plt.scatter(x=x,y=y)
             #plt.show()
             if show:
@@ -101,14 +102,16 @@ def sine_test(paramlist,show,val):
             target = np.sin(input)
             if i > 2000:
                 target += 1.0
+            o_target = target
+            o_target = target
             noise = (np.random.uniform() - 0.5) * 0.8
             target += noise
             x.append(input)
             y.append(target)
 
-            cumLossgd.append(cumLossgd[-1] + np.fabs(target - fimtgd.eval_and_learn(np.array(input), target)))
-            cumLossls.append(cumLossls[-1] + np.fabs(target - fimtls.eval_and_learn(np.array(input), target)))
-            cumLossgls.append(cumLossgls[-1] + np.fabs(target - gfimtls.eval_and_learn(np.array(input), target)))
+            cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
+            cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
+            cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
         #plt.scatter(x=x,y=y)
         #plt.show()
         if show:
@@ -281,16 +284,23 @@ def find_max(result_list):
     global numberoftests
     global minvalgls
     global minparamgls
+    global c_loss_ls
+    global c_loss_gd
+    global c_loss_gls
+
     for gdls in result_list:
         if gdls[0][-1]<minvalgd:
             minvalgd=gdls[0][-1]
             minparamgd=gdls[-1]
+            c_loss_gd = gdls[0]
         if gdls[1][-1]<minvalls:
             minvalls=gdls[1][-1]
             minparamls=gdls[-1]
+            c_loss_ls = gdls[1]
         if gdls[2][-1]<minvalgls:
             minvalgls=gdls[2][-1]
             minparamgls=gdls[-1]
+            c_loss_gls = gdls[2]
     return minvalgd,minparamgd,minvalls,minparamls,minvalgls,minparamgls
 
 global gammalist
@@ -308,6 +318,9 @@ global result_list
 global bar
 global minvalgls
 global minparamgls
+global c_loss_ls
+global c_loss_gd
+global c_loss_gls
 
 if __name__ == '__main__':
 
@@ -326,14 +339,25 @@ if __name__ == '__main__':
     global bar
     global minvalgls
     global minparamgls
+    global c_loss_ls
+    global c_loss_gd
+    global c_loss_gls
+
     #pool = #()
     if(True): #For plot testing purposes, set this to false
-        gammalist=[0.25,0.5,0.75,1.0]
-        n_minlist=[5,10,15,100]#np.arange(1,1000,50)
+        #gammalist=[0.25,0.5,0.75,1.0]
+        #n_minlist=[5,10,15,100]#np.arange(1,1000,50)
+        #alphalist=[0.001,0.01,0.1]
+        #thresholdlist= [10,25,100,150]
+        #learnlist=[0.005,0.01,0.025,0.05]
+        #greedlist=[2,5,50,100]
+
+        gammalist=[0.05,0.5,1.0]
+        n_minlist=[5,10,15,35]#np.arange(1,1000,50)
         alphalist=[0.001]
-        thresholdlist= [10,25,100,150]
-        learnlist=[0.005,0.01,0.025,0.05]
-        greedlist=[2,5,50,100]
+        thresholdlist= [5,15,100]
+        learnlist=[0.01,0.025,0.05]
+        greedlist=[2,5,50]
     else:
         gammalist = [1.0]
         n_minlist = [35]
@@ -376,5 +400,21 @@ if __name__ == '__main__':
     print("Optimal GD: "+ str(minparamgd)+ " with " + str(minvalgd))
     print("Optimal LS: "+ str(minparamls)+ " with " + str(minvalls))
     print("Optimal gLS: " + str(minparamgls) + " with " + str(minvalgls))
+
+    f=plt.figure()
+    plt.plot(c_loss_gd[1:], label="FIMTGD")
+    f.hold(True)
+    plt.plot(c_loss_ls[1:], label="FIMTLS")
+    f.hold(True)
+    plt.plot(c_loss_gls[1:], label="gFIMTLS")
+       #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+        #plt.plot(avglossgd,label="Average GD Loss")
+        #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+    plt.legend()
+    plt.savefig('optimal_performance.png')
+    plt.show()
+    f.clear()
+
+
     #abalone_test(minparamgd,True,0)
     #abalone_test(minparamls,True,0)
