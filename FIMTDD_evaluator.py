@@ -16,6 +16,7 @@ import multiprocessing as mp
 import progressbar as pb
 import os
 import sys
+from DataGenerator import *
 sys.setrecursionlimit(100000)
 
 def test2d(paramlist,show,val):
@@ -103,7 +104,6 @@ def sine_test(paramlist,show,val):
             if i > 2000:
                 target += 1.0
             o_target = target
-            o_target = target
             noise = (np.random.uniform() - 0.5) * 0.8
             target += noise
             x.append(input)
@@ -134,6 +134,7 @@ def sine_test(paramlist,show,val):
         #print(fimtgd.count_nodes())
         return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
 #counter = 0
+
 def abalone_test(paramlist,show,val):
     #print(val)
     #print(paramlist)
@@ -182,9 +183,6 @@ def abalone_test(paramlist,show,val):
         #print(fimtgd.count_leaves())
         #print(fimtgd.count_nodes())
         return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
-
-
-
 
 def flightdata_test(paramlist,show,val):
     fimtgd = FIMTGD(gamma=paramlist[0], n_min=paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
@@ -254,8 +252,119 @@ def flightdata_test(paramlist,show,val):
     print(fimtgd.count_leaves(),fimtgd.count_nodes())
     return [cumLossgd,cumLossls,val,paramlist]
 
+def line_test(paramlist,show,val):
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
 
+    data=generate_Line(4000)
 
+    data=np.array(sorted(data,key=lambda x:x[0]))
+    o_target=data[:,-1]
+    input=data[:,1:-1]
+    for counter in range(len(data)):
+        noise = (np.random.uniform() - 0.5) * 0.8
+        target= o_target[counter] + noise
+        cumLossgd.append(cumLossgd[-1] + np.fabs(o_target[counter] - fimtgd.eval_and_learn(np.array(input[counter]), target)))
+        cumLossls.append(cumLossls[-1] + np.fabs(o_target[counter] - fimtls.eval_and_learn(np.array(input[counter]), target)))
+        cumLossgls.append(cumLossgls[-1] + np.fabs(o_target[counter] - gfimtls.eval_and_learn(np.array(input[counter]), target)))
+
+    if show:
+        f = plt.figure()
+        plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+        f.hold(True)
+        plt.plot(cumLossls[1:], label="Filter Loss")
+        # avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+        # plt.plot(avglossgd,label="Average GD Loss")
+        # plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+        plt.title("CumLoss Ratio:" + str(min(cumLossgd[-1], cumLossls[-1]) / max(cumLossgd[-1], cumLossls[-1])))
+        plt.legend()
+        figname = "g" + str(paramlist[0]) + "_nmin" + str(paramlist[1]) + "_al" + str(paramlist[2]) + "_thr" + str(
+            paramlist[3]) \
+                  + "_lr" + str(paramlist[4]) + ".png"
+        plt.savefig(figname)
+        # plt.show()
+        f.clear()
+    return [cumLossgd, cumLossls, cumLossgls, val, paramlist]
+
+def lexp_test(paramlist,show,val):
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
+
+    data=generate_Lexp(4000)
+
+    data=np.array(sorted(data,key=lambda x:x[0]))
+    o_target=data[:,-1]
+    input=data[:,1:-1]
+    for counter in range(len(data)):
+        noise = (np.random.uniform() - 0.5) * 0.8
+        target= o_target[counter] + noise
+        cumLossgd.append(cumLossgd[-1] + np.fabs(o_target[counter] - fimtgd.eval_and_learn(np.array(input[counter]), target)))
+        cumLossls.append(cumLossls[-1] + np.fabs(o_target[counter] - fimtls.eval_and_learn(np.array(input[counter]), target)))
+        cumLossgls.append(cumLossgls[-1] + np.fabs(o_target[counter] - gfimtls.eval_and_learn(np.array(input[counter]), target)))
+
+    if show:
+        f = plt.figure()
+        plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+        f.hold(True)
+        plt.plot(cumLossls[1:], label="Filter Loss")
+        # avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+        # plt.plot(avglossgd,label="Average GD Loss")
+        # plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+        plt.title("CumLoss Ratio:" + str(min(cumLossgd[-1], cumLossls[-1]) / max(cumLossgd[-1], cumLossls[-1])))
+        plt.legend()
+        figname = "g" + str(paramlist[0]) + "_nmin" + str(paramlist[1]) + "_al" + str(paramlist[2]) + "_thr" + str(
+            paramlist[3]) \
+                  + "_lr" + str(paramlist[4]) + ".png"
+        plt.savefig(figname)
+        # plt.show()
+        f.clear()
+    return [cumLossgd, cumLossls, cumLossgls, val, paramlist]
+
+def losc_test(paramlist,show,val):
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
+
+    data=generate_Losc(4000)
+
+    data=np.array(sorted(data,key=lambda x:x[0]))
+    o_target=data[:,-1]
+    input=data[:,1:-1]
+    for counter in range(len(data)):
+        noise = (np.random.uniform() - 0.5) * 0.8
+        target= o_target[counter] + noise
+        cumLossgd.append(cumLossgd[-1] + np.fabs(o_target[counter] - fimtgd.eval_and_learn(np.array(input[counter]), target)))
+        cumLossls.append(cumLossls[-1] + np.fabs(o_target[counter] - fimtls.eval_and_learn(np.array(input[counter]), target)))
+        cumLossgls.append(cumLossgls[-1] + np.fabs(o_target[counter] - gfimtls.eval_and_learn(np.array(input[counter]), target)))
+
+    if show:
+        f = plt.figure()
+        plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+        f.hold(True)
+        plt.plot(cumLossls[1:], label="Filter Loss")
+        # avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+        # plt.plot(avglossgd,label="Average GD Loss")
+        # plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+        plt.title("CumLoss Ratio:" + str(min(cumLossgd[-1], cumLossls[-1]) / max(cumLossgd[-1], cumLossls[-1])))
+        plt.legend()
+        figname = "g" + str(paramlist[0]) + "_nmin" + str(paramlist[1]) + "_al" + str(paramlist[2]) + "_thr" + str(
+            paramlist[3]) \
+                  + "_lr" + str(paramlist[4]) + ".png"
+        plt.savefig(figname)
+        # plt.show()
+        f.clear()
+    return [cumLossgd, cumLossls, cumLossgls, val, paramlist]
 
 def callback_func(list):
     global result_list
@@ -367,11 +476,11 @@ if __name__ == '__main__':
         greedlist = [2]
 
 
-    """
-    if(True): #for singular test, set this to true
-        for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
-            print (flightdata_test(paramlist,True,12))
-    """
+
+    if(False): #for singular test, set this to true
+        for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist,greedlist):
+            print (line_test(paramlist,True,12))
+
     minparamgd=[]
     minvalgd=np.inf
     minparamls=[]
@@ -389,7 +498,7 @@ if __name__ == '__main__':
         paramlist = list(paramlist)
         idx = learnlist.index(paramlist[-1])
         paramlist.append(greedlist[idx])
-        pool.apply_async(func=test2d,args=(paramlist,False,c),callback=callback_func)
+        pool.apply_async(func=losc_test,args=(paramlist,False,c),callback=callback_func)
         #callback_func(test2d(paramlist,False,c))
         c = c+1
     pool.close()
