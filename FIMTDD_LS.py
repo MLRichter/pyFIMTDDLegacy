@@ -177,9 +177,11 @@ class Node:
                 alt_q = self.alt_tree.S_i
             if alt_q == 0:
                 alt_q = 0.00000001
+            #print("Check Q: "+str(this_q)+ str(alt_q)+ " at "+ str(x+y))
             if not this_q == 0.0 and np.log(this_q/alt_q) > 0:
                 #if alt-tree has better performance, replace this node with alternate subtree
                 #print "Replaced alt tree (LS) @",self.index
+                #print ("Replacement has happend at " + str(x+y))
                 if self.isroot:
                     self.parent.root = self.alt_tree
                 elif self.parent.left.index == self.index:

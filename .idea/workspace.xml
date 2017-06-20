@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/FIMTDD_evaluator.py" line="489" />
+    <bookmark url="file://$PROJECT_DIR$/FIMTDD_evaluator.py" line="485" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39d2a72d-0015-4c8f-9463-089f22be9722" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DataGenerator.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.01_nmin200_al0.15_thr15_lr1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.01_nmin300_al0.15_thr15_lr10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.01_nmin300_al0.15_thr15_lr100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.01_nmin500_al0.15_thr5_lr1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.01_nmin801_al0.25_thr45_lr1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/g0.06_nmin401_al0.15_thr45_lr500.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/optimal_performance.png" afterPath="$PROJECT_DIR$/optimal_performance.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pyFIMTDD.iml" afterPath="$PROJECT_DIR$/.idea/pyFIMTDD.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIMTDD_LS.py" afterPath="$PROJECT_DIR$/FIMTDD_LS.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIMTDD_evaluator.py" afterPath="$PROJECT_DIR$/FIMTDD_evaluator.py" />
     </list>
     <ignored path="pyFIMTDD.iws" />
@@ -30,31 +34,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FIMTDD_evaluator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FIMTDD_evaluator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
+            <state relative-caret-position="511">
+              <caret line="524" column="38" lean-forward="false" selection-start-line="524" selection-start-column="38" selection-end-line="524" selection-end-column="38" />
               <folding>
                 <element signature="e#20#30#0" expanded="true" />
                 <element signature="e#480#3129#0" expanded="false" />
-                <element signature="e#5461#7677#0" expanded="false" />
-                <element signature="e#7724#11096#0" expanded="false" />
-                <element signature="e#11137#13044#0" expanded="false" />
-                <element signature="e#13085#14992#0" expanded="false" />
-                <element signature="e#16971#17222#0" expanded="false" />
-                <element signature="e#17320#18157#0" expanded="false" />
+                <element signature="e#3170#5432#0" expanded="false" />
+                <element signature="e#5488#7731#0" expanded="false" />
+                <element signature="e#7778#11168#0" expanded="false" />
+                <element signature="e#11209#13143#0" expanded="false" />
+                <element signature="e#13184#15118#0" expanded="false" />
+                <element signature="e#15159#17093#0" expanded="false" />
+                <element signature="e#17124#17375#0" expanded="false" />
+                <element signature="e#17473#18310#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataGenerator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataGenerator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="64" column="69" lean-forward="false" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -62,19 +58,12 @@
       <file leaf-file-name="FIMTDD_LS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Greedy_FIMTDD_LS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Greedy_FIMTDD_LS.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="179" column="13" lean-forward="false" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+              <folding>
+                <element signature="e#1980#3394#0" expanded="false" />
+                <element signature="e#3431#3542#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +80,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>abalone</find>
+      <find>print</find>
+      <find>this</find>
+      <find>grow</find>
+      <find>self.alpha =</find>
+      <find>print (</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,9 +95,9 @@
       <list>
         <option value="$USER_HOME$/Google Drive/UOSLib/MPyUOSLib/Modules/IncrementalLearning/FIMTDD3.py" />
         <option value="$PROJECT_DIR$/pyFIMTDD.py" />
-        <option value="$PROJECT_DIR$/FIMTDD_LS.py" />
         <option value="$PROJECT_DIR$/Greedy_FIMTDD_LS.py" />
         <option value="$PROJECT_DIR$/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/FIMTDD_LS.py" />
         <option value="$PROJECT_DIR$/FIMTDD_evaluator.py" />
       </list>
     </option>
@@ -471,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497354074970</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added an artifical data generator and test scenarios for them">
+      <created>1497881925401</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497881925401</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -481,12 +482,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25067386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2573443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2573443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44770858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30199766" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991913" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -503,14 +504,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ran the scaler for the flight data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ran the scaler for the flight data" />
+    <MESSAGE value="Added an artifical data generator and test scenarios for them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an artifical data generator and test scenarios for them" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="44" />
+      <option name="time" value="64" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -522,12 +524,14 @@
           <folding>
             <element signature="e#20#30#0" expanded="true" />
             <element signature="e#480#3129#0" expanded="false" />
-            <element signature="e#5461#7677#0" expanded="false" />
-            <element signature="e#7724#11096#0" expanded="false" />
-            <element signature="e#11137#13044#0" expanded="false" />
-            <element signature="e#13085#14992#0" expanded="false" />
-            <element signature="e#16971#17222#0" expanded="false" />
-            <element signature="e#17320#18157#0" expanded="false" />
+            <element signature="e#3170#5432#0" expanded="false" />
+            <element signature="e#5488#7731#0" expanded="false" />
+            <element signature="e#7778#11168#0" expanded="false" />
+            <element signature="e#11209#13143#0" expanded="false" />
+            <element signature="e#13184#15118#0" expanded="false" />
+            <element signature="e#15159#17093#0" expanded="false" />
+            <element signature="e#17124#17375#0" expanded="false" />
+            <element signature="e#17473#18310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,7 +553,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2088">
           <caret line="117" column="14" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="e#7896#7938#1" expanded="false" />
+            <element signature="e#8041#8888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -562,7 +569,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9342">
           <caret line="519" column="27" lean-forward="false" selection-start-line="519" selection-start-column="27" selection-end-line="519" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#1980#3394#0" expanded="false" />
+            <element signature="e#3431#3542#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,12 +583,14 @@
           <folding>
             <element signature="e#20#30#0" expanded="true" />
             <element signature="e#480#3129#0" expanded="false" />
-            <element signature="e#5461#7677#0" expanded="false" />
-            <element signature="e#7724#11096#0" expanded="false" />
-            <element signature="e#11137#13044#0" expanded="false" />
-            <element signature="e#13085#14992#0" expanded="false" />
-            <element signature="e#16971#17222#0" expanded="false" />
-            <element signature="e#17320#18157#0" expanded="false" />
+            <element signature="e#3170#5432#0" expanded="false" />
+            <element signature="e#5488#7731#0" expanded="false" />
+            <element signature="e#7778#11168#0" expanded="false" />
+            <element signature="e#11209#13143#0" expanded="false" />
+            <element signature="e#13184#15118#0" expanded="false" />
+            <element signature="e#15159#17093#0" expanded="false" />
+            <element signature="e#17124#17375#0" expanded="false" />
+            <element signature="e#17473#18310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,7 +607,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="203" column="9" lean-forward="false" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#7896#7938#1" expanded="false" />
+            <element signature="e#8041#8888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -603,7 +618,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="181" column="17" lean-forward="false" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1980#3394#0" expanded="false" />
+            <element signature="e#3431#3542#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -614,12 +632,14 @@
           <folding>
             <element signature="e#20#30#0" expanded="true" />
             <element signature="e#480#3129#0" expanded="false" />
-            <element signature="e#5461#7677#0" expanded="false" />
-            <element signature="e#7724#11096#0" expanded="false" />
-            <element signature="e#11137#13044#0" expanded="false" />
-            <element signature="e#13085#14992#0" expanded="false" />
-            <element signature="e#16971#17222#0" expanded="false" />
-            <element signature="e#17320#18157#0" expanded="false" />
+            <element signature="e#3170#5432#0" expanded="false" />
+            <element signature="e#5488#7731#0" expanded="false" />
+            <element signature="e#7778#11168#0" expanded="false" />
+            <element signature="e#11209#13143#0" expanded="false" />
+            <element signature="e#13184#15118#0" expanded="false" />
+            <element signature="e#15159#17093#0" expanded="false" />
+            <element signature="e#17124#17375#0" expanded="false" />
+            <element signature="e#17473#18310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,7 +656,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="220" column="10" lean-forward="false" selection-start-line="220" selection-start-column="10" selection-end-line="220" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="e#1980#3394#0" expanded="false" />
+            <element signature="e#3431#3542#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -656,25 +679,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin801_al0.25_thr45_lr1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin500_al0.15_thr5_lr1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/g0.06_nmin401_al0.15_thr45_lr500.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -694,52 +718,117 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/g0.01_nmin500_al0.15_thr5_lr1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/g0.01_nmin801_al0.25_thr45_lr1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.05.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.025.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.05.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.025.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr100_lr0.01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr100_lr0.025.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.05_nmin10_al0.001_thr5_lr0.01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g0.06_nmin401_al0.15_thr45_lr500.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g1.0_nmin35_al0.2854_thr100_lr0.05.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#480#3129#0" expanded="false" />
-            <element signature="e#5461#7677#0" expanded="false" />
-            <element signature="e#7724#11096#0" expanded="false" />
-            <element signature="e#11137#13044#0" expanded="false" />
-            <element signature="e#13085#14992#0" expanded="false" />
-            <element signature="e#16971#17222#0" expanded="false" />
-            <element signature="e#17320#18157#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="416">
+          <caret line="523" column="0" lean-forward="false" selection-start-line="523" selection-start-column="0" selection-end-line="523" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Greedy_FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="214">
+          <caret line="334" column="21" lean-forward="false" selection-start-line="334" selection-start-column="17" selection-end-line="334" selection-end-column="21" />
+          <folding>
+            <element signature="e#7896#7938#1" expanded="false" />
+            <element signature="e#8041#8888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataGenerator.py">
+    <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="64" column="69" lean-forward="false" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="272">
+          <caret line="179" column="13" lean-forward="false" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+          <folding>
+            <element signature="e#1980#3394#0" expanded="false" />
+            <element signature="e#3431#3542#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="524" column="38" lean-forward="false" selection-start-line="524" selection-start-column="38" selection-end-line="524" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#30#0" expanded="true" />
+            <element signature="e#480#3129#0" expanded="false" />
+            <element signature="e#3170#5432#0" expanded="false" />
+            <element signature="e#5488#7731#0" expanded="false" />
+            <element signature="e#7778#11168#0" expanded="false" />
+            <element signature="e#11209#13143#0" expanded="false" />
+            <element signature="e#13184#15118#0" expanded="false" />
+            <element signature="e#15159#17093#0" expanded="false" />
+            <element signature="e#17124#17375#0" expanded="false" />
+            <element signature="e#17473#18310#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

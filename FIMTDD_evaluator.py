@@ -86,9 +86,9 @@ def test2d(paramlist,show,val):
 def sine_test(paramlist,show,val):
     #print(val)
     #print(paramlist)
-    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
     cumLossgd  =[0]
     cumLossls  =[0]
     cumLossgls =[0]
@@ -138,9 +138,9 @@ def sine_test(paramlist,show,val):
 def abalone_test(paramlist,show,val):
     #print(val)
     #print(paramlist)
-    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
     cumLossgd  =[0]
     cumLossls  =[0]
     cumLossgls =[0]
@@ -185,8 +185,8 @@ def abalone_test(paramlist,show,val):
         return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
 
 def flightdata_test(paramlist,show,val):
-    fimtgd = FIMTGD(gamma=paramlist[0], n_min=paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls = FIMTLS(gamma=paramlist[0], n_min=paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtgd = FIMTGD(gamma=paramlist[0], n_min=paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls = FIMTLS(gamma=paramlist[0], n_min=paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
     cumLossgd = [0]
     cumLossls = [0]
     symbolDict={}
@@ -253,9 +253,9 @@ def flightdata_test(paramlist,show,val):
     return [cumLossgd,cumLossls,val,paramlist]
 
 def line_test(paramlist,show,val):
-    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
     cumLossgd  =[0]
     cumLossls  =[0]
     cumLossgls =[0]
@@ -291,9 +291,9 @@ def line_test(paramlist,show,val):
     return [cumLossgd, cumLossls, cumLossgls, val, paramlist]
 
 def lexp_test(paramlist,show,val):
-    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
     cumLossgd  =[0]
     cumLossls  =[0]
     cumLossgls =[0]
@@ -329,9 +329,9 @@ def lexp_test(paramlist,show,val):
     return [cumLossgd, cumLossls, cumLossgls, val, paramlist]
 
 def losc_test(paramlist,show,val):
-    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[4])
-    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=[2], threshold=paramlist[3], learn=paramlist[5])
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
     cumLossgd  =[0]
     cumLossls  =[0]
     cumLossgls =[0]
@@ -466,7 +466,7 @@ if __name__ == '__main__':
         alphalist=[0.001]
         thresholdlist= [5,15,100]
         learnlist=[0.01,0.025,0.05]
-        greedlist=[2,5,50]
+        greedlist=[1,5,50]
     else:
         gammalist = [1.0]
         n_minlist = [35]
@@ -476,10 +476,6 @@ if __name__ == '__main__':
         greedlist = [2]
 
 
-
-    if(False): #for singular test, set this to true
-        for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist,greedlist):
-            print (line_test(paramlist,True,12))
 
     minparamgd=[]
     minvalgd=np.inf
@@ -494,13 +490,21 @@ if __name__ == '__main__':
     results = np.zeros(numberoftests)
     c = 0
     bar = pb.ProgressBar(max_value=numberoftests)
-    for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
-        paramlist = list(paramlist)
-        idx = learnlist.index(paramlist[-1])
-        paramlist.append(greedlist[idx])
-        pool.apply_async(func=losc_test,args=(paramlist,False,c),callback=callback_func)
-        #callback_func(test2d(paramlist,False,c))
-        c = c+1
+    if(False): #for non pool test, set this to true
+        for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
+            paramlist = list(paramlist)
+            idx = learnlist.index(paramlist[-1])
+            paramlist.append(greedlist[idx])
+            line_test(paramlist,False,12)
+            c=c+1
+    else:
+        for paramlist in itertools.product(gammalist, n_minlist, alphalist, thresholdlist, learnlist):
+            paramlist = list(paramlist)
+            idx = learnlist.index(paramlist[-1])
+            paramlist.append(greedlist[idx])
+            pool.apply_async(func=sine_test,args=(paramlist,False,c),callback=callback_func)
+            #callback_func(test2d(paramlist,False,c))
+            c = c+1
     pool.close()
     pool.join()
     print('Proceses Finished')
