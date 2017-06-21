@@ -1,0 +1,10 @@
+Proceses Finished for Kiel Dataset:
+Optimal GD: [0.5, 96, 0.001, 5, 0.05, 50] with 4362.02386845
+Optimal LS: [0.5, 192, 0.001, 100, 0.05, 50] with 3812.59135044
+Optimal gLS: [1.0, 384, 0.001, 5, 0.05, 50] with 5814.1843469
+
+Proceses Finished for Kiel Dataset:
+Optimal GD: [1.0, 96, 0.001, 100, 0.05, 50] with 4415.63595622
+Optimal LS: [1.0, 384, 0.001, 15, 0.01, 1] with 3917.68841205
+Optimal gLS: [1.0, 384, 0.001, 5, 0.05, 50] with 5616.81985928
+
