@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/FIMTDD_evaluator.py" line="566" />
+    <bookmark url="file://$PROJECT_DIR$/FIMTDD_evaluator.py" line="655" />
+    <bookmark url="file://$PROJECT_DIR$/FIMTDD_evaluator.py" line="588" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39d2a72d-0015-4c8f-9463-089f22be9722" name="Default" comment="" />
+    <list default="true" id="39d2a72d-0015-4c8f-9463-089f22be9722" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Legendre_Test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/optimal_performance.png" afterPath="$PROJECT_DIR$/optimal_performance.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pyFIMTDD.iml" afterPath="$PROJECT_DIR$/.idea/pyFIMTDD.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIMTDD_evaluator.py" afterPath="$PROJECT_DIR$/FIMTDD_evaluator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.txt" afterPath="$PROJECT_DIR$/results.txt" />
+    </list>
     <ignored path="pyFIMTDD.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,6 +23,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -26,32 +36,30 @@
       <file leaf-file-name="FIMTDD_evaluator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="602" column="10" lean-forward="false" selection-start-line="602" selection-start-column="10" selection-end-line="602" selection-end-column="10" />
+            <state vertical-scroll-proportion="12.028261">
+              <caret line="588" column="33" selection-start-line="588" selection-start-column="33" selection-end-line="588" selection-end-column="33" />
               <folding>
                 <element signature="e#20#30#0" expanded="true" />
-                <element signature="e#4044#6693#0" expanded="false" />
-                <element signature="e#6734#8996#0" expanded="false" />
-                <element signature="e#9052#11295#0" expanded="false" />
-                <element signature="e#11342#14732#0" expanded="false" />
-                <element signature="e#14773#16707#0" expanded="false" />
-                <element signature="e#16748#18682#0" expanded="false" />
-                <element signature="e#18723#20657#0" expanded="false" />
-                <element signature="e#20688#20939#0" expanded="false" />
-                <element signature="e#21037#21874#0" expanded="false" />
+                <element signature="e#8811#11073#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FIMTDD_LS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
+      <file leaf-file-name="optimal_performance.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/optimal_performance.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Legendre_Test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Legendre_Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="172" column="23" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
-                <element signature="e#1980#3394#0" expanded="false" />
-                <element signature="e#3431#3542#0" expanded="false" />
+                <element signature="e#86#132#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +68,8 @@
       <file leaf-file-name="result.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,8 +78,8 @@
       <file leaf-file-name="results.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/results.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,15 +120,26 @@
         <option value="$PROJECT_DIR$/DataGenerator.py" />
         <option value="$PROJECT_DIR$/FIMTDD_LS.py" />
         <option value="$PROJECT_DIR$/result.txt" />
+        <option value="$PROJECT_DIR$/Legendre_Test.py" />
         <option value="$PROJECT_DIR$/FIMTDD_evaluator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-13" />
+    <option name="y" value="-13" />
+    <option name="width" value="3866" />
+    <option name="height" value="2106" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -137,9 +156,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pyFIMTDD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="pyFIMTDD" />
@@ -152,12 +177,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$USER_HOME$/Google Drive/UOSLib/MPyUOSLib" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -211,6 +237,23 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="Legendre_Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyFIMTDD" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Legendre_Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -226,18 +269,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pyFIMTDD" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -345,39 +376,36 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.FIMTDD_evaluator" />
       <item index="1" class="java.lang.String" itemvalue="Python.DataGenerator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Legendre_Test" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.FIMTDD_evaluator" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DataGenerator" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Legendre_Test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DataGenerator" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="39d2a72d-0015-4c8f-9463-089f22be9722" name="Default" comment="" />
       <created>1495459913159</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
       <updated>1495459913159</updated>
     </task>
     <task id="LOCAL-00001" summary="Ran the scaler for the flight data">
       <created>1497354074970</created>
       <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1497354074970</updated>
     </task>
     <task id="LOCAL-00002" summary="Added an artifical data generator and test scenarios for them">
       <created>1497881925401</created>
       <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1497881925401</updated>
     </task>
@@ -385,19 +413,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-13" y="-13" width="3866" height="2106" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2557629" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25564304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30186608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30183727" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -421,85 +449,138 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FIMTDD_evaluator.py</url>
-          <line>21</line>
+          <line>104</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FIMTDD_evaluator.py</url>
-          <line>42</line>
+          <line>125</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="67" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#4044#6693#0" expanded="false" />
-            <element signature="e#6734#8996#0" expanded="false" />
-            <element signature="e#9052#11295#0" expanded="false" />
-            <element signature="e#11342#14732#0" expanded="false" />
-            <element signature="e#14773#16707#0" expanded="false" />
-            <element signature="e#16748#18682#0" expanded="false" />
-            <element signature="e#18723#20657#0" expanded="false" />
-            <element signature="e#20688#20939#0" expanded="false" />
-            <element signature="e#21037#21874#0" expanded="false" />
+            <element signature="e#8811#11073#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2904">
-          <caret line="179" column="13" lean-forward="false" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="172" column="23" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
           <folding>
-            <element signature="e#1980#3394#0" expanded="false" />
-            <element signature="e#3431#3542#0" expanded="false" />
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#30#0" expanded="true" />
+            <element signature="e#8811#11073#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+          <folding>
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#4044#6693#0" expanded="false" />
-            <element signature="e#6734#8996#0" expanded="false" />
-            <element signature="e#9052#11295#0" expanded="false" />
-            <element signature="e#11342#14732#0" expanded="false" />
-            <element signature="e#14773#16707#0" expanded="false" />
-            <element signature="e#16748#18682#0" expanded="false" />
-            <element signature="e#18723#20657#0" expanded="false" />
-            <element signature="e#20688#20939#0" expanded="false" />
-            <element signature="e#21037#21874#0" expanded="false" />
+            <element signature="e#8811#11073#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin500_al0.15_thr5_lr1.png" />
     <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2988">
-          <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Greedy_FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="117" column="14" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="14" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="14" />
           <folding>
             <element signature="e#7896#7938#1" expanded="false" />
             <element signature="e#8041#8888#0" expanded="false" />
@@ -507,49 +588,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin200_al0.15_thr15_lr1.png" />
     <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9342">
-          <caret line="519" column="27" lean-forward="false" selection-start-line="519" selection-start-column="27" selection-end-line="519" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="519" column="27" selection-start-line="519" selection-start-column="27" selection-end-line="519" selection-end-column="27" />
           <folding>
-            <element signature="e#1980#3394#0" expanded="false" />
-            <element signature="e#3431#3542#0" expanded="false" />
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#4044#6693#0" expanded="false" />
-            <element signature="e#6734#8996#0" expanded="false" />
-            <element signature="e#9052#11295#0" expanded="false" />
-            <element signature="e#11342#14732#0" expanded="false" />
-            <element signature="e#14773#16707#0" expanded="false" />
-            <element signature="e#16748#18682#0" expanded="false" />
-            <element signature="e#18723#20657#0" expanded="false" />
-            <element signature="e#20688#20939#0" expanded="false" />
-            <element signature="e#21037#21874#0" expanded="false" />
+            <element signature="e#8811#11073#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Greedy_FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="203" column="9" lean-forward="false" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="203" column="9" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
           <folding>
             <element signature="e#7896#7938#1" expanded="false" />
             <element signature="e#8041#8888#0" expanded="false" />
@@ -559,57 +647,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="181" column="17" lean-forward="false" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="181" column="17" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
           <folding>
-            <element signature="e#1980#3394#0" expanded="false" />
-            <element signature="e#3431#3542#0" expanded="false" />
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#4044#6693#0" expanded="false" />
-            <element signature="e#6734#8996#0" expanded="false" />
-            <element signature="e#9052#11295#0" expanded="false" />
-            <element signature="e#11342#14732#0" expanded="false" />
-            <element signature="e#14773#16707#0" expanded="false" />
-            <element signature="e#16748#18682#0" expanded="false" />
-            <element signature="e#18723#20657#0" expanded="false" />
-            <element signature="e#20688#20939#0" expanded="false" />
-            <element signature="e#21037#21874#0" expanded="false" />
+            <element signature="e#8811#11073#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="224" column="34" lean-forward="false" selection-start-line="224" selection-start-column="34" selection-end-line="224" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="224" column="34" selection-start-line="224" selection-start-column="34" selection-end-line="224" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="220" column="10" lean-forward="false" selection-start-line="220" selection-start-column="10" selection-end-line="220" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="220" column="10" selection-start-line="220" selection-start-column="10" selection-end-line="220" selection-end-column="10" />
           <folding>
-            <element signature="e#1980#3394#0" expanded="false" />
-            <element signature="e#3431#3542#0" expanded="false" />
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -617,48 +729,22 @@
     <entry file="file://$USER_HOME$/Google Drive/UOSLib/MPyUOSLib/Modules/IncrementalLearning/FIMTDD3.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py" />
     <entry file="file://$PROJECT_DIR$/DataGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin200_al0.15_thr15_lr1.png" />
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin300_al0.15_thr15_lr10.png" />
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin300_al0.15_thr15_lr100.png" />
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin500_al0.15_thr5_lr1.png" />
-    <entry file="file://$PROJECT_DIR$/g0.01_nmin801_al0.25_thr45_lr1.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.01.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.05.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr5_lr0.025.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.01.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.05.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr15_lr0.025.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr100_lr0.01.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin5_al0.001_thr100_lr0.025.png" />
-    <entry file="file://$PROJECT_DIR$/g0.05_nmin10_al0.001_thr5_lr0.01.png" />
-    <entry file="file://$PROJECT_DIR$/g0.06_nmin401_al0.15_thr45_lr500.png" />
-    <entry file="file://$PROJECT_DIR$/g1.0_nmin35_al0.2854_thr100_lr0.05.png" />
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/matplotlib/pyplot.py" />
     <entry file="file://$PROJECT_DIR$/Greedy_FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="334" column="21" lean-forward="false" selection-start-line="334" selection-start-column="17" selection-end-line="334" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="334" column="21" selection-start-line="334" selection-start-column="17" selection-end-line="334" selection-end-column="21" />
           <folding>
             <element signature="e#7896#7938#1" expanded="false" />
             <element signature="e#8041#8888#0" expanded="false" />
@@ -668,49 +754,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_LS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="172" column="23" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="17" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
           <folding>
-            <element signature="e#1980#3394#0" expanded="false" />
-            <element signature="e#3431#3542#0" expanded="false" />
+            <marker date="1504764227934" expanded="true" signature="62:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="67:115" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="197:785" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="206:481" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="808:976" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1011:1297" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1325:1558" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1373:1515" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1587:1817" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1635:1773" placeholder="..." />
+            <marker date="1504764227934" expanded="false" signature="1971:3394" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="1980:2587" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="false" signature="3422:3542" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3573:3736" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3759:3989" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="3768:3846" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1504764227934" expanded="true" signature="4024:7033" placeholder="..." />
+            <marker date="1504764227934" expanded="true" signature="4033:4137" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyFIMTDD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="41" selection-start-line="185" selection-start-column="41" selection-end-line="185" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/numpy/polynomial/legendre.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.832887">
+          <caret line="1789" column="6" selection-start-line="1789" selection-start-column="6" selection-end-line="1789" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optimal_performance.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Legendre_Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="e#86#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/result.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIMTDD_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="602" column="10" lean-forward="false" selection-start-line="602" selection-start-column="10" selection-end-line="602" selection-end-column="10" />
+        <state vertical-scroll-proportion="12.028261">
+          <caret line="588" column="33" selection-start-line="588" selection-start-column="33" selection-end-line="588" selection-end-column="33" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
-            <element signature="e#4044#6693#0" expanded="false" />
-            <element signature="e#6734#8996#0" expanded="false" />
-            <element signature="e#9052#11295#0" expanded="false" />
-            <element signature="e#11342#14732#0" expanded="false" />
-            <element signature="e#14773#16707#0" expanded="false" />
-            <element signature="e#16748#18682#0" expanded="false" />
-            <element signature="e#18723#20657#0" expanded="false" />
-            <element signature="e#20688#20939#0" expanded="false" />
-            <element signature="e#21037#21874#0" expanded="false" />
+            <element signature="e#8811#11073#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -17,6 +17,7 @@ import progressbar as pb
 import os
 import sys
 from DataGenerator import *
+from Legendre_Test import data_provider
 sys.setrecursionlimit(100000)
 
 def get_Kiel_data():
@@ -162,6 +163,45 @@ def test2d(paramlist,show,val):
             #print(i)
             #print(fimtgd.count_leaves())
             #print(fimtgd.count_nodes())
+        return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
+
+def legendre_test(paramlist,show,val):
+    #print(val)
+    #print(paramlist)
+    fimtgd=FIMTGD(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    fimtls=FIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[4])
+    gfimtls=gFIMTLS(gamma=paramlist[0], n_min = paramlist[1], alpha=paramlist[2], threshold=paramlist[3], learn=paramlist[5])
+    cumLossgd  =[0]
+    cumLossls  =[0]
+    cumLossgls =[0]
+    if True:
+        start = 0.0
+        end = 1.0
+        i = 0
+        for input,target,o_target in data_provider([4,5,6,7],[0.1,0.1,0.1,0.1],[100,200,300,400],4):
+            cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
+            cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
+            cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
+        #plt.scatter(x=x,y=y)
+        #plt.show()
+        if show:
+            f=plt.figure()
+            plt.plot(cumLossgd[1:], label="Gradient Descent Loss")
+            f.hold(True)
+            plt.plot(cumLossls[1:], label="Filter Loss")
+           #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
+            #plt.plot(avglossgd,label="Average GD Loss")
+            #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")
+            plt.title("CumLoss Ratio:"+str(min(cumLossgd[-1],cumLossls[-1])/max(cumLossgd[-1],cumLossls[-1])))
+            plt.legend()
+            figname="g"+str(paramlist[0])+"_nmin"+str(paramlist[1])+"_al"+str(paramlist[2])+"_thr"+str(paramlist[3])\
+                    + "_lr"+str(paramlist[4])+".png"
+            plt.savefig(figname)
+            #plt.show()
+            f.clear()
+        #print(i)
+        #print(fimtgd.count_leaves())
+        #print(fimtgd.count_nodes())
         return [cumLossgd,cumLossls,cumLossgls,val,paramlist]
 
 def sine_test(paramlist,show,val):
@@ -543,10 +583,10 @@ if __name__ == '__main__':
         #greedlist=[2,5,50,100]
 
         gammalist=[0.05,0.5,1.0]
-        n_minlist=[96,96*2,96*4,96*8]#np.arange(1,1000,50)
-        alphalist=[0.001]
+        n_minlist=[20,10,5,1]#np.arange(1,1000,50)
+        alphalist=[0.001,0.01,0.1,0.4]
         thresholdlist= [5,15,100]
-        learnlist=[0.01,0.025,0.05]
+        learnlist=[0.1,0.125,0.15]
         greedlist=[1,5,50]
     else:
         gammalist = [0.01,0.05,1.0]
@@ -583,12 +623,12 @@ if __name__ == '__main__':
             paramlist = list(paramlist)
             idx = learnlist.index(paramlist[-1])
             paramlist.append(greedlist[idx])
-            pool.apply_async(func=Kiel_Test,args=(paramlist,False,c),callback=callback_func)
-            #callback_func(Kiel_Test(paramlist,False,c))
+            pool.apply_async(func=legendre_test,args=(paramlist,False,c),callback=callback_func)
+            #callback_func(legendre_test(paramlist,False,c))
             c = c+1
     pool.close()
     pool.join()
-    s0 = ('Proceses Finished for Kiel Dataset:')
+    s0 = ('Proceses Finished for Legendre Dataset:')
     #print(result_list)
     minvalgd, minparamgd, minvalls, minparamls,minvalgls,minparamgls = find_max(result_list)
     s1 = ("Optimal GD: "+ str(minparamgd)+ " with " + str(minvalgd))
@@ -596,6 +636,7 @@ if __name__ == '__main__':
     s3 = ("Optimal gLS: " + str(minparamgls) + " with " + str(minvalgls))
     with open('results.txt','a+') as fp:
         fp.write(s0+'\n'+s1+'\n'+s2+'\n'+s3+'\n\n')
+    print(s0+'\n'+s1+'\n'+s2+'\n'+s3+'\n\n')
     f=plt.figure()
     plt.plot(c_loss_gd[1:], label="FIMTGD")
     f.hold(True)

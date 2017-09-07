@@ -8,3 +8,48 @@ Optimal GD: [1.0, 96, 0.001, 100, 0.05, 50] with 4415.63595622
 Optimal LS: [1.0, 384, 0.001, 15, 0.01, 1] with 3917.68841205
 Optimal gLS: [1.0, 384, 0.001, 5, 0.05, 50] with 5616.81985928
 
+Proceses Finished for Kiel Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 518.980129312
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 352.221665628
+Optimal gLS: [1.0, 96, 0.001, 15, 0.05, 5] with 582.305537968
+
+Proceses Finished for Kiel Dataset:
+Optimal GD: [0.5, 96, 0.001, 15, 0.05, 50] with 403.086681758
+Optimal LS: [1.0, 96, 0.001, 5, 0.05, 50] with 274.424960655
+Optimal gLS: [0.5, 96, 0.001, 15, 0.05, 50] with 318.522865715
+
+Proceses Finished for Kiel Dataset:
+Optimal GD: [1.0, 192, 0.001, 5, 0.025, 5] with 365.064360447
+Optimal LS: [1.0, 192, 0.001, 5, 0.025, 5] with 260.04735719
+Optimal gLS: [1.0, 192, 0.001, 5, 0.025, 5] with 319.636774161
+
+Proceses Finished for Kiel Dataset:
+Optimal GD: [1.0, 192, 0.01, 15, 0.025, 5] with 665.377940401
+Optimal LS: [1.0, 192, 0.01, 15, 0.025, 5] with 472.428439295
+Optimal gLS: [0.05, 96, 0.1, 100, 0.05, 50] with 552.930077441
+
+Proceses Finished for Kiel Dataset:
+Optimal GD: [1.0, 96, 0.1, 15, 0.05, 50] with 146.600151267
+Optimal LS: [0.05, 768, 0.001, 15, 0.05, 50] with 90.4399468579
+Optimal gLS: [0.05, 768, 0.001, 15, 0.05, 50] with 88.7980771266
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 20, 0.01, 5, 0.05, 50] with 129.102862612
+Optimal LS: [0.5, 20, 0.01, 5, 0.05, 50] with 70.9003626802
+Optimal gLS: [0.05, 20, 0.1, 5, 0.025, 5] with 76.2582650069
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.05, 20, 0.1, 15, 0.05, 50] with 135.787860964
+Optimal LS: [1.0, 5, 0.001, 100, 0.05, 50] with 63.3253958726
+Optimal gLS: [1.0, 5, 0.001, 100, 0.05, 50] with 70.0493057167
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 20, 0.001, 5, 0.1, 50] with 104.729604589
+Optimal LS: [1.0, 10, 0.001, 5, 0.1, 50] with 71.10692776
+Optimal gLS: [0.05, 5, 0.001, 5, 0.025, 1] with 70.9825888125
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.05, 5, 0.1, 100, 0.1, 1] with 91.2847221039
+Optimal LS: [1.0, 5, 0.001, 15, 0.15, 50] with 70.4839715378
+Optimal gLS: [0.05, 10, 0.4, 5, 0.125, 5] with 66.6139567072
+
