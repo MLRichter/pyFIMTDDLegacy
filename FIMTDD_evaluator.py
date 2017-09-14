@@ -5,8 +5,10 @@ import numpy as np
 
 from mpl_toolkits.mplot3d import axes3d
 
-from pyFIMTDD import FIMTDD as FIMTGD
-from Greedy_FIMTDD_LS import FIMTDD as gFIMTLS
+#from pyFIMTDD import FIMTDD as FIMTGD
+#from Greedy_FIMTDD_LS import FIMTDD as gFIMTLS
+from ucFIMTDD_LS import FIMTDD as gFIMTLS
+from umcFIMTDD_LS import FIMTDD as FIMTGD
 from FIMTDD_LS import FIMTDD as FIMTLS
 import matplotlib.pyplot as plt
 import itertools
@@ -178,7 +180,7 @@ def legendre_test(paramlist,show,val):
         start = 0.0
         end = 1.0
         i = 0
-        for input,target,o_target in data_provider([4,5,6,7],[0.1,0.1,0.1,0.1],[100,200,300,400],4):
+        for input,target,o_target in data_provider([9,9],[0.1,0.1],[1000,1000],2):
             cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
             cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
             cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
@@ -582,12 +584,15 @@ if __name__ == '__main__':
         #learnlist=[0.005,0.01,0.025,0.05]
         #greedlist=[2,5,50,100]
 
-        gammalist=[0.05,0.5,1.0]
-        n_minlist=[20,10,5,1]#np.arange(1,1000,50)
+        gammalist=[0.01,0.05,0.5,1.0]
+        n_minlist=[20,10,5,3,40]#np.arange(1,1000,50)
         alphalist=[0.001,0.01,0.1,0.4]
-        thresholdlist= [5,15,100]
-        learnlist=[0.1,0.125,0.15]
-        greedlist=[1,5,50]
+        thresholdlist= [1,7,20,30]
+        #learnlist=[0.75,0.1,0.125,0.15]
+        #greedlist=[1,5,25,50]
+        learnlist = [0.05]
+        greedlist = [5]
+
     else:
         gammalist = [0.01,0.05,1.0]
         n_minlist = [96]
@@ -623,7 +628,7 @@ if __name__ == '__main__':
             paramlist = list(paramlist)
             idx = learnlist.index(paramlist[-1])
             paramlist.append(greedlist[idx])
-            pool.apply_async(func=legendre_test,args=(paramlist,False,c),callback=callback_func)
+            pool.apply_async(func=losc_test,args=(paramlist,False,c),callback=callback_func)
             #callback_func(legendre_test(paramlist,False,c))
             c = c+1
     pool.close()

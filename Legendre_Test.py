@@ -72,7 +72,6 @@ def _generate_dataset(degree:int,sample_size:int,noise_level:float) -> (np.array
     :param noise_level:
     :return:
     """
-
     return _add_uniform_noise(_generate_dataset_without_conceptdrift_from_legendre_polynom(degree,sample_size),noise_level)
 
 def data_provider(degree:list,noise_level:list,sample_size_per_subset,number_of_drifts:list) -> (np.array,np.array):
@@ -95,10 +94,3 @@ def data_provider(degree:list,noise_level:list,sample_size_per_subset,number_of_
     for i in range(len(X)):
         for j in range(len(X[i])):
             yield X[i][j],Y[i][j],O[i][j]
-
-
-
-
-
-
-
