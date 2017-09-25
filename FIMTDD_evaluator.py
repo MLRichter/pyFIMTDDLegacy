@@ -7,8 +7,8 @@ from mpl_toolkits.mplot3d import axes3d
 
 #from pyFIMTDD import FIMTDD as FIMTGD
 #from Greedy_FIMTDD_LS import FIMTDD as gFIMTLS
-from ucFIMTDD_LS import FIMTDD as gFIMTLS
-from umcFIMTDD_LS import FIMTDD as FIMTGD
+from umcFIMTDD_LS import FIMTDD as gFIMTLS
+from pyFIMTDD import FIMTDD as FIMTGD
 from FIMTDD_LS import FIMTDD as FIMTLS
 import matplotlib.pyplot as plt
 import itertools
@@ -180,10 +180,15 @@ def legendre_test(paramlist,show,val):
         start = 0.0
         end = 1.0
         i = 0
-        for input,target,o_target in data_provider([9,9],[0.1,0.1],[1000,1000],2):
-            cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
-            cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
-            cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
+        for input,target,o_target in data_provider([9,9,32,32,4],[0.05,0.05,0.05,0.05,0.05],[1000,1000,3000,2000,2000],5):
+            #print(i,'/',2000)
+            i+=1
+            #cumLossgd.append(cumLossgd[-1] + np.sqrt(np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target))**2))
+            #cumLossls.append(cumLossls[-1] + np.sqrt(np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target))**2))
+            #cumLossgls.append(cumLossgls[-1] + np.sqrt(np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target))**2))
+            cumLossgd.append(cumLossgd[-1] + np.sqrt(np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target))**2))
+            cumLossls.append(cumLossls[-1] + np.sqrt(np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target))**2))
+            cumLossgls.append(cumLossgls[-1] + np.sqrt(np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target))**2))
         #plt.scatter(x=x,y=y)
         #plt.show()
         if show:
@@ -232,9 +237,9 @@ def sine_test(paramlist,show,val):
             x.append(input)
             y.append(target)
 
-            cumLossgd.append(cumLossgd[-1] + np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target)))
-            cumLossls.append(cumLossls[-1] + np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target)))
-            cumLossgls.append(cumLossgls[-1] + np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target)))
+            cumLossgd.append(cumLossgd[-1] + np.sqrt(np.fabs(o_target - fimtgd.eval_and_learn(np.array(input), target))**2))
+            cumLossls.append(cumLossls[-1] + np.sqrt(np.fabs(o_target - fimtls.eval_and_learn(np.array(input), target))**2))
+            cumLossgls.append(cumLossgls[-1] + np.sqrt(np.fabs(o_target - gfimtls.eval_and_learn(np.array(input), target))**2))
         #plt.scatter(x=x,y=y)
         #plt.show()
         if show:
@@ -577,24 +582,24 @@ if __name__ == '__main__':
 
     #pool = #()
     if(True): #For plot testing purposes, set this to false
-        #gammalist=[0.25,0.5,0.75,1.0]
-        #n_minlist=[5,10,15,100]#np.arange(1,1000,50)
-        #alphalist=[0.001,0.01,0.1]
-        #thresholdlist= [10,25,100,150]
-        #learnlist=[0.005,0.01,0.025,0.05]
-        #greedlist=[2,5,50,100]
+        gammalist=[0.5,0.6,0.6,0.4]
+        n_minlist=[75,100,125,150,200]#np.arange(1,1000,50)
+        alphalist=[0.0005,0.001,0.01]
+        thresholdlist= [50,100,125]
+        learnlist=[0.05,0.75,0.1]
+        greedlist=[2,5,50]
 
-        gammalist=[0.01,0.05,0.5,1.0]
-        n_minlist=[20,10,5,3,40]#np.arange(1,1000,50)
-        alphalist=[0.001,0.01,0.1,0.4]
-        thresholdlist= [1,7,20,30]
+        #gammalist=[0.5,0.75,1.0,2.0,4.0]
+        #n_minlist=[48,96,96*2,96*4]#np.arange(1,1000,50)
+        #alphalist=[0.001,0.01,0.1]
+        #thresholdlist= [1,7,20]
         #learnlist=[0.75,0.1,0.125,0.15]
         #greedlist=[1,5,25,50]
-        learnlist = [0.05]
-        greedlist = [5]
+        #learnlist = [0.05]
+        #greedlist = [5]
 
     else:
-        gammalist = [0.01,0.05,1.0]
+        gammalist = [1.0]
         n_minlist = [96]
         alphalist = [0.001]
         thresholdlist = [15]
@@ -628,7 +633,7 @@ if __name__ == '__main__':
             paramlist = list(paramlist)
             idx = learnlist.index(paramlist[-1])
             paramlist.append(greedlist[idx])
-            pool.apply_async(func=losc_test,args=(paramlist,False,c),callback=callback_func)
+            pool.apply_async(func=legendre_test,args=(paramlist,False,c),callback=callback_func)
             #callback_func(legendre_test(paramlist,False,c))
             c = c+1
     pool.close()
@@ -638,7 +643,7 @@ if __name__ == '__main__':
     minvalgd, minparamgd, minvalls, minparamls,minvalgls,minparamgls = find_max(result_list)
     s1 = ("Optimal GD: "+ str(minparamgd)+ " with " + str(minvalgd))
     s2 = ("Optimal LS: "+ str(minparamls)+ " with " + str(minvalls))
-    s3 = ("Optimal gLS: " + str(minparamgls) + " with " + str(minvalgls))
+    s3 = ("Optimal umvcLS: " + str(minparamgls) + " with " + str(minvalgls))
     with open('results.txt','a+') as fp:
         fp.write(s0+'\n'+s1+'\n'+s2+'\n'+s3+'\n\n')
     print(s0+'\n'+s1+'\n'+s2+'\n'+s3+'\n\n')
@@ -647,7 +652,7 @@ if __name__ == '__main__':
     f.hold(True)
     plt.plot(c_loss_ls[1:], label="FIMTLS")
     f.hold(True)
-    plt.plot(c_loss_gls[1:], label="gFIMTLS")
+    plt.plot(c_loss_gls[1:], label="umcFIMTLS")
        #avglossgd=np.array([cumLossgd[-1]/len(cumLossgd)]*len(cumLossgd))
         #plt.plot(avglossgd,label="Average GD Loss")
         #plt.plot([cumLossls[-1]/len(cumLossls)]*len(cumLossls), label="Average Filter Loss")

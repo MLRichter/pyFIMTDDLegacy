@@ -391,7 +391,7 @@ class LeafNode(Node):
                 self.ebst.append(tree)
         for i in range(len(self.ebst)):
             self.ebst[i].add(x[i],y)
-        if self.c > self.n_min and self.criterion.get_uncertainty():
+        if self.c > 1 and self.criterion.get_uncertainty():
             #try to split
             splits = list()
             for tree in self.ebst:
@@ -669,14 +669,14 @@ class uncertainty_criterion:
         if n == 0:
             return 0.0
         n_inv = 1/float(n)
-        return np.sqrt(np.fabs(n_inv*(y_sq_count - (n_inv*(y_count**2)))))
+        return np.fabs(n_inv*(y_sq_count - (n_inv*(y_count**2))))
 
     def get_uncertainty(self):
         error_sd = self.sd(self.counter,self.sq_sum,self.sum)
         y_sd = self.sd(self.counter,self.y_sq,self.y_sum)
         if y_sd == 0:
-            return 100000
+            return False
         elif not self.mean:
-            return error_sd / y_sd < self.gamma
+            return error_sd / y_sd > self.gamma
         else:
-            return self.mean_err() / y_sd < self.gamma
+            return np.fabs(self.mean_err()) / y_sd > self.gamma

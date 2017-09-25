@@ -3,6 +3,8 @@ __author__ = 'matsrichter'
 
 import numpy as np
 
+
+
 class FIMTDD:
     """
     The Learning Algorithm as Object
@@ -17,6 +19,8 @@ class FIMTDD:
         :param threshold:   threshold for change detection
         :return:
         """
+        
+        
         self.root = LeafNode(self,n_min=n_min,gamma=gamma,alpha=alpha,threshold=threshold,learn=learn)
         self.gamma = gamma
         self.alpha = alpha
@@ -44,6 +48,7 @@ class FIMTDD:
             x = [x]
         self.c += 1
         self.root.isroot = True
+
         yp = self.root.eval_and_learn(np.array(x),y)
         #print str(self.c)+" ( yp: "+str(yp)+", y: "+str(y)+")"+" loss: "+str(np.fabs(yp-y))
         return yp
@@ -400,6 +405,8 @@ class LeafNode(Node):
             bound = 1-self.hoefding_bound(splits[bi]['n'])
             if splits[bi]['score'] < bound or self.hoefding_bound(splits[bi]['n']) < 0.05:
                 self.split(splits[bi],bi)
+                
+                
         return yp
 
 

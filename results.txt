@@ -38,3 +38,168 @@ Optimal GD: [0.5, 10, 0.4, 30, 0.05, 5] with 1994.70826172
 Optimal LS: [0.5, 3, 0.1, 30, 0.05, 5] with 1951.05509526
 Optimal gLS: [0.5, 3, 0.4, 30, 0.05, 5] with 1841.38722663
 
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 384, 0.001, 1, 0.05, 5] with 8496.69899679
+Optimal LS: [0.75, 96, 0.01, 20, 0.05, 5] with 3543.50017146
+Optimal gLS: [1.0, 384, 0.001, 7, 0.05, 5] with 8487.30001234
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [4.0, 384, 0.001, 7, 0.05, 5] with 8495.49148853
+Optimal LS: [0.75, 96, 0.01, 7, 0.05, 5] with 3688.70651401
+Optimal gLS: [2.0, 384, 0.001, 20, 0.05, 5] with 8484.07549898
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 15, 0.01, 10, 0.05, 100] with 171.145904706
+Optimal LS: [0.75, 10, 0.1, 150, 0.005, 2] with 76.7942139633
+Optimal ChristmasLS: [0.75, 10, 0.1, 150, 0.005, 2] with 70.6593314051
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 5, 0.01, 100, 0.05, 100] with 1406.9637906
+Optimal LS: [1.0, 15, 0.01, 10, 0.005, 2] with 445.99422908
+Optimal ChristmasLS: [1.0, 15, 0.01, 10, 0.005, 2] with 493.310036378
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 5, 0.001, 100, 0.05, 100] with 2184.96553895
+Optimal LS: [0.25, 5, 0.1, 25, 0.025, 50] with 1886.35837542
+Optimal ChristmasLS: [0.5, 15, 0.1, 100, 0.01, 5] with 2105.70815739
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 4507.46567226
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 4656.68424188
+Optimal ChristmasLS: [1.0, 96, 0.001, 15, 0.05, 5] with 12566.0743249
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 199.830617879
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 138.935379057
+Optimal ChristmasLS: [1.0, 96, 0.001, 15, 0.05, 5] with 161.908455281
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 1724.40770417
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 722.279471175
+Optimal ChristmasLS: [1.0, 96, 0.001, 15, 0.05, 5] with 2254.48546992
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 6198.99186197
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 6071.60237746
+Optimal ChristmasLS: [1.0, 96, 0.001, 15, 0.05, 5] with 12218.1165176
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 96, 0.001, 15, 0.05, 5] with 340.849586121
+Optimal LS: [1.0, 96, 0.001, 15, 0.05, 5] with 279.814957215
+Optimal ChristmasLS: [1.0, 96, 0.001, 15, 0.05, 5] with 293.333171034
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 10, 0.1, 150, 0.05, 100] with 164.137278185
+Optimal LS: [0.75, 5, 0.1, 25, 0.05, 100] with 74.4359204282
+Optimal umvcLS: [0.75, 5, 0.001, 10, 0.01, 5] with 81.2750850435
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 15, 0.1, 100, 0.05, 100] with 175.267644746
+Optimal LS: [0.25, 10, 0.001, 10, 0.005, 2] with 60.9394484881
+Optimal umvcLS: [0.25, 10, 0.001, 10, 0.005, 2] with 88.8593516091
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 100, 0.001, 25, 0.05, 100] with 136.233001032
+Optimal LS: [0.5, 100, 0.001, 25, 0.05, 100] with 58.0242716374
+Optimal umvcLS: [0.75, 15, 0.01, 10, 0.01, 5] with 81.7271813144
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 5, 0.1, 10, 0.05, 100] with 172.781148036
+Optimal LS: [0.5, 15, 0.1, 25, 0.01, 5] with 70.6214846891
+Optimal umvcLS: [0.5, 10, 0.1, 25, 0.05, 100] with 106.233835555
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 10, 0.1, 150, 0.05, 100] with 160.040814229
+Optimal LS: [0.75, 5, 0.1, 150, 0.01, 5] with 71.8345719734
+Optimal umvcLS: [0.75, 5, 0.1, 150, 0.01, 5] with 99.2158742829
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 15, 0.1, 100, 0.05, 100] with 142.074931489
+Optimal LS: [0.25, 10, 0.001, 10, 0.005, 2] with 75.2989895401
+Optimal umvcLS: [0.25, 100, 0.1, 10, 0.025, 50] with 89.4457219572
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 5, 0.01, 100, 0.05, 100] with 165.084840329
+Optimal LS: [0.5, 10, 0.001, 150, 0.025, 50] with 76.9362277704
+Optimal umvcLS: [0.25, 100, 0.001, 100, 0.01, 5] with 115.484336187
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.25, 15, 0.001, 100, 0.05, 100] with 165.137652058
+Optimal LS: [0.75, 15, 0.001, 10, 0.005, 2] with 59.4952618844
+Optimal umvcLS: [1.0, 5, 0.01, 150, 0.025, 50] with 79.3588818534
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.25, 5, 0.1, 25, 0.025, 50] with 1384.98520365
+Optimal LS: [0.25, 10, 0.01, 10, 0.005, 2] with 451.934888754
+Optimal umvcLS: [0.5, 10, 0.001, 100, 0.005, 2] with 1704.01685703
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 100, 0.01, 10, 0.05, 100] with 6236.82080931
+Optimal LS: [0.5, 100, 0.01, 150, 0.025, 50] with 6479.95139407
+Optimal umvcLS: [0.25, 5, 0.1, 25, 0.01, 5] with 6736.81274342
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.75, 5, 0.01, 25, 0.005, 2] with 51375.2009425
+Optimal LS: [1.0, 5, 0.001, 25, 0.01, 5] with 22841.7390554
+Optimal umvcLS: [0.75, 5, 0.001, 10, 0.025, 50] with 58726.5793107
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 5, 0.001, 100, 0.05, 100] with 2122.57770089
+Optimal LS: [0.5, 10, 0.1, 100, 0.05, 100] with 1684.84122456
+Optimal umvcLS: [0.25, 5, 0.01, 25, 0.025, 50] with 3090.72702254
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 100, 0.001, 150, 0.05, 100] with 178.413636689
+Optimal LS: [0.25, 100, 0.1, 10, 0.025, 50] with 70.9511240006
+Optimal umvcLS: [0.25, 100, 0.1, 10, 0.025, 50] with 74.3519662738
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [1.0, 100, 0.01, 10, 0.05, 100] with 170.394808309
+Optimal LS: [0.5, 10, 0.001, 100, 0.005, 2] with 77.6253608542
+Optimal umvcLS: [1.0, 100, 0.01, 10, 0.05, 100] with 107.18714503
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [2.0, 10, 0.001, 50, 0.75, 5] with 128.379613713
+Optimal LS: [0.6, 10, 0.01, 125, 0.05, 2] with 79.2611255523
+Optimal umvcLS: [1.0, 150, 0.001, 50, 0.1, 50] with 99.1401275037
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [2.0, 10, 0.0005, 100, 0.1, 50] with 562.515493958
+Optimal LS: [1.0, 100, 0.001, 125, 0.75, 5] with 504.157597859
+Optimal umvcLS: [2.0, 10, 0.0005, 100, 0.1, 50] with 563.728164985
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 200, 0.01, 125, 0.1, 50] with 680.028591545
+Optimal LS: [0.6, 100, 0.0005, 125, 0.75, 5] with 441.604935745
+Optimal umvcLS: [0.6, 100, 0.0005, 125, 0.75, 5] with 476.800992638
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.6, 125, 0.0005, 100, 0.1, 50] with 650.148177893
+Optimal LS: [0.6, 125, 0.0005, 100, 0.1, 50] with 491.847083783
+Optimal umvcLS: [0.6, 200, 0.01, 125, 0.05, 2] with 552.443844758
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.4, 75, 0.01, 50, 0.1, 50] with 619.551072516
+Optimal LS: [0.4, 75, 0.01, 50, 0.1, 50] with 481.749694735
+Optimal umvcLS: [0.5, 200, 0.0005, 125, 0.75, 5] with 504.813468963
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.4, 200, 0.001, 100, 0.1, 50] with 649.377323936
+Optimal LS: [0.4, 200, 0.001, 100, 0.1, 50] with 491.668238099
+Optimal umvcLS: [0.6, 125, 0.0005, 125, 0.05, 2] with 610.527233338
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.6, 75, 0.01, 125, 0.1, 50] with 607.492005461
+Optimal LS: [0.6, 75, 0.01, 125, 0.1, 50] with 486.308548822
+Optimal umvcLS: [0.6, 125, 0.001, 125, 0.75, 5] with 605.484461936
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.6, 125, 0.01, 50, 0.1, 50] with 644.987509664
+Optimal LS: [0.6, 200, 0.001, 100, 0.1, 50] with 510.084960102
+Optimal umvcLS: [0.6, 200, 0.01, 100, 0.75, 5] with 635.26039047
+
+Proceses Finished for Legendre Dataset:
+Optimal GD: [0.5, 100, 0.0005, 50, 0.05, 2] with 579.609999029
+Optimal LS: [0.5, 125, 0.01, 125, 0.1, 50] with 489.835651155
+Optimal umvcLS: [0.5, 100, 0.0005, 50, 0.05, 2] with 617.119061841
+
